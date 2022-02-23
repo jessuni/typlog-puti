@@ -1,0 +1,85 @@
+{% from "macros.j2" import render_social_icons, render_subject_content %}
+
+{% block style %}
+<link rel="stylesheet" href="{{ static_url }}assets/puti.css">
+<link rel="stylesheet" href="{{ static_url }}assets/font-awesome.css">
+{% endblock %}
+
+{% block script %}
+<script src="{{ static_url }}assets/font.js"></script>
+{% endblock%}
+
+{% block body %}
+<div class="site">
+  <div class="site_head">
+    <a class="site_logo" href="{{ linkify('/') }}">
+      <h1>
+        {% if site.logo %}
+          <img src="{{ site.logo.src|thumbnail('ss') }}" alt="{{ site.name }} logo">
+        {% else %}
+          <strong>{{ site.name }}</strong>
+        {% endif %}
+      </h1>
+    </a>
+    <div>
+    {% if site.summary %}
+      <p class="site_description">{{ site.summary }}</p>
+    {% endif %}
+    {% if site.socials %}
+      <div class="site_social">
+        {{ render_social_icons(site) }}
+      </div>
+    {% endif %}
+    </div>
+  </div>
+
+{% set items = query.latest_subjects('post', contains=['content','tags']) %}
+{% if items %}
+  <div class="items">
+  {% for item in items %}
+    <div class="item">
+      <div class="item_wrap">
+      {% if item.cover %}
+        <a href="{{ linkify(item.url)}}" class="item_image">
+          <img src="{{ item.cover.src|thumbnail('sm') }}" alt="{{ item.title }} image">
+        </a>
+      {% endif %}
+        <div class="item_info">
+          <h2><a href="{{ linkify(item.url) }}">{{ item.title }}</a></h2>
+          <div class="item_summary">{{ item.summary|escape }}</div>
+        </div>
+      </div>
+      <div class="item_meta">
+        <span class="item_time">
+          <i class="fa fa-sun-o"></i>
+          <time datetime="{{ item.published_at|xmldatetime }}">{{ item.published_at.strftime('%Y-%m-%d') }}</time>
+        </span>
+        {% if item.tags %}
+          <span class="item_tags">
+            <i class="fa fa-flask"></i>
+            {% for tag in item.tags %}
+              <a href="{{ linkify(tag.url) }}">{{ tag.title }}</a>
+            {% endfor %}
+          </span>
+        {% endif %}
+      </div>
+    </div>
+  {% endfor %}
+    <div class="navigation">
+      <a href="{{ linkify(site.posts_url) }}">Read more posts</a>
+    </div>
+  </div>
+{% endif %}
+</div>
+
+<div class="site_foot">
+  {% if site.primary_links %}
+    <nav class="site_nav">
+      {% for nav in site.primary_links %}
+        <a href="{{ nav.url }}" {% if nav.blank %} target="_blank"{% endif %}>{{ nav.title }}</a>
+      {% endfor %}
+    </nav>
+  {% endif %}
+  <p class="power_by">Powered by <a href="https://typlog.com/?utm_source={{ site.slug }}&utm_medium=theme-coffee" target="_blank" rel="noopener">Typlog</a>, originally designed by <a href="https://blog.caicai.me/" target="_blank" rel="noopener"> and transplanted by <a href="https://jessieji.com/?utm_source={{ site.slug }}&utm_medium=theme-coffee" target="_blank" rel="noopener">Jessie</a>.
+</div>
+{% endblock %}
