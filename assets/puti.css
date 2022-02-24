@@ -136,6 +136,9 @@ a, a:visited {
   display: flex;
   justify-content: space-between;
 }
+.navigation a:hover {
+  color: var(--primary-hex);
+}
 .read_more {
   text-align: right;
   flex-grow: 1;
@@ -169,3 +172,12 @@ a, a:visited {
   }
 }
 
+@media screen and (max-width: 900px){
+  .site {
+    width: 95%;
+    margin-top: 20px;
+  }
+  .site_head, .main {
+    width: 92%;
+  }
+}
