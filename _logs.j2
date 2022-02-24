@@ -15,7 +15,7 @@
     <div class="item_meta">
       <span>
         <i class="fa fa-sun-o"></i>
-        <time datetime="{{ item.published_at|xmldatetime }}">{{ item.published_at.strftime('%Y-%m-%d') }}</time>
+        <time datetime="{{ item.published_at|xmldatetime }}" itemprop="datePublished">{{ item.published_at.strftime('%Y-%m-%d') }}</time>
       </span>
       {% if item.tags %}
         <span class="item_tags">
