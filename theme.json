@@ -2,14 +2,10 @@
   "name": "Puti",
   "name#zh": "菩提",
   "name#ja": "菩提",
-  "description": "A podcast theme designed by uxcoffee.",
+  "description": "A blog theme designed by Caicai.",
   "repo": "jessuni/typlog-puti",
   "version": "0.1.0",
   "author": "Jessie Ji",
   "images": [],
-  "tags": ["blog"],
-  "site": {
-    "id": 3011,
-    "name": "Puti"
-  }
+  "tags": ["blog"]
 }
