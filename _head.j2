@@ -1,0 +1,23 @@
+{% from "macros.j2" import render_social_icons %}
+
+<div class="site_head">
+  <a class="site_logo" href="{{ linkify('/') }}">
+    <h1>
+      {% if site.logo %}
+        <img src="{{ site.logo.src|thumbnail('ss') }}" alt="{{ site.name }} logo">
+      {% else %}
+        <strong>{{ site.name }}</strong>
+      {% endif %}
+    </h1>
+  </a>
+  <div>
+  {% if site.summary %}
+    <p class="site_description">{{ site.summary }}</p>
+  {% endif %}
+  {% if site.socials %}
+    <div class="site_social">
+      {{ render_social_icons(site) }}
+    </div>
+  {% endif %}
+  </div>
+</div>

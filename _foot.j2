@@ -1,0 +1,10 @@
+<div class="site_foot">
+  {% if site.primary_links %}
+    <nav class="site_nav">
+      {% for nav in site.primary_links %}
+        <a href="{{ nav.url }}" {% if nav.blank %} target="_blank"{% endif %}>{{ nav.title }}</a>
+      {% endfor %}
+    </nav>
+  {% endif %}
+  <p class="power_by">Powered by <a href="https://typlog.com/?utm_source={{ site.slug }}&utm_medium=theme-coffee" target="_blank" rel="noopener">Typlog</a>. Originally designed by <a href="https://blog.caicai.me/" target="_blank" rel="noopener">Caicai</a>.
+</div>

@@ -1,6 +1,5 @@
 :root {
-  --cjk-sans: "source-han-sans-simplified-c", "PingFang SC", "Hiragino Sans GB", "PingHei",
-  "Open Sans", "Work Sans", "Microsoft YaHei", "SimSun";
+  --cjk-sans: "source-han-sans-simplified-c", "PingFang SC", "Hiragino Sans GB", "PingHei", "Open Sans", "Work Sans", "Microsoft YaHei", "SimSun";
   --sys-sans: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial;
   --primary-hex: #333;
   --secondary-hex: #424242;
@@ -35,7 +34,7 @@ a, a:visited {
   width: 820px;
   box-shadow: 0px 10px 20px 0px rgb(236 236 236 / 86%);
 }
-.site_head, .items {
+.site_head, .main {
   width: 720px;
   margin: 0 auto;
 }
@@ -70,7 +69,7 @@ a, a:visited {
 .site_social a + a {
   margin-left: 10px;
 }
-.items {
+.main {
   padding: 0px 20px;
   height: auto;
 }
@@ -134,7 +133,12 @@ a, a:visited {
   border-bottom: 1px solid #f2f2f2;
   color: var(--tertiary-hex);
   font-size: 0.875rem;
-  text-align:right;
+  display: flex;
+  justify-content: space-between;
+}
+.read_more {
+  text-align: right;
+  flex-grow: 1;
 }
 .site_foot {
   font-size: 0.75em;
@@ -147,6 +151,9 @@ a, a:visited {
   color: var(--quaternary-hex);
   margin: 0px 12px;
 }
+.site_foot a:hover {
+  color: var(--primary-hex);
+}
 .power_by {
   margin: 0;
   color: var(--meta-hex);
@@ -157,7 +164,7 @@ a, a:visited {
   .site {
     width: 1000px;
   }
-  .site_head, .items {
+  .site_head, .main {
     width: 820px;
   }
 }

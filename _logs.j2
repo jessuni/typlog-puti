@@ -1,0 +1,30 @@
+{% for item in items %}
+{% set url = linkify(item.url) %}
+  <div class="item" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="item_wrap">
+    {% if item.cover %}
+      <a href="{{ url }}" class="item_image">
+        <img src="{{ item.cover.src|thumbnail('sm') }}" alt="{{ item.title }} image">
+      </a>
+    {% endif %}
+      <div class="item_info">
+        <h2 itemprop="headline"><a href="{{ url }}">{{ item.title }}</a></h2>
+        <div class="item_summary" itemprop="articleBody">{{ item.summary|escape }}</div>
+      </div>
+    </div>
+    <div class="item_meta">
+      <span>
+        <i class="fa fa-sun-o"></i>
+        <time datetime="{{ item.published_at|xmldatetime }}">{{ item.published_at.strftime('%Y-%m-%d') }}</time>
+      </span>
+      {% if item.tags %}
+        <span class="item_tags">
+          <i class="fa fa-flask"></i>
+          {% for tag in item.tags %}
+            <a href="{{ linkify(tag.url) }}">{{ tag.title }}</a>
+          {% endfor %}
+        </span>
+      {% endif %}
+    </div>
+  </div>
+{% endfor %}
