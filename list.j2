@@ -1,0 +1,23 @@
+{% from "macros.j2" import render_navigation %}
+
+{% block style %}
+<link rel="stylesheet" href="{{ static_url }}assets/font-awesome.css">
+<link rel="stylesheet" href="{{ static_url }}assets/puti.css">
+{% endblock %}
+
+{% block script %}
+<script src="{{ static_url }}assets/font.js"></script>
+{% endblock%}
+
+{% block body %}
+<div class="site">
+{% if not features.head_html %}
+  {% include "./_head.j2" %}
+{% endif %}
+<div class="main">
+  {% set items = page.items %}
+  {% include "./_logs.j2" %}
+  {{ render_navigation(site, page) }}
+</div>
+{% include "./_foot.j2" %}
+{% endblock %}
