@@ -6,6 +6,8 @@
   "repo": "jessuni/typlog-puti",
   "version": "0.1.0",
   "author": "Jessie Ji",
-  "images": [],
-  "tags": ["blog"]
+  "tags": ["blog"],
+  "images": [
+    "https://user-images.githubusercontent.com/290496/158343805-0a62c4a4-a4ef-4784-b5f2-7d2723cc6fc0.png"
+  ]
 }
