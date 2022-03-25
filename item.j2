@@ -1,4 +1,4 @@
-{% from "macros.j2" import render_subject_content %}
+{% from "macros.j2" import render_subject_content, render_subject_license, render_subject_authors %}
 
 {% block style %}
 <link rel="stylesheet" href="{{ static_url }}assets/font-awesome.css">
@@ -35,12 +35,14 @@
         </span>
       {% endif %}
       </div>
-      <div class="entry-foot">
-        <div class="enjoy">
-          <button class="button js-enjoy">Enjoy</button>
-        </div>
-      </div>
-
+    </article>
+    <div class="entry-foot">
+      <section class="entry-block">
+        {% include "_snippets/subject_share.j2" %}
+      </section>
+      {% if page.type != 'page' %}
+        {{ render_subject_license(site, page) }}
+      {% endif %}
       {% if features.comment and page.comment != 'disabled' %}
         <section class="entry-section comment">
           <div class="inner">
@@ -52,7 +54,7 @@
           </div>
         </section>
       {% endif %}
-    </article>
+    </div>
   </div>
 </div>
 {% endblock %}
