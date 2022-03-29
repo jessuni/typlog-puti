@@ -1,10 +1,10 @@
 {
-  "name": "Puti",
+  "name": "puti",
   "name#zh": "菩提",
   "name#ja": "菩提",
   "description": "A blog theme designed by Caicai.",
   "repo": "jessuni/typlog-puti",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "author": "Jessie Ji",
   "tags": ["blog"],
   "images": [
