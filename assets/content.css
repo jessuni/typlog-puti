@@ -273,6 +273,7 @@ button.js-enjoy i {
 }
 .highlight-table table {
   margin: 0;
+  background: var(--background-hex);
 }
 .highlight {
   color: var(--syntax-default);
