@@ -41,7 +41,9 @@
         {% include "_snippets/subject_share.j2" %}
       </section>
       {% if page.type != 'page' %}
+      <section class="entry-block">
         {{ render_subject_license(site, page) }}
+      </section>
       {% endif %}
       {% if features.comment and page.comment != 'disabled' %}
         <section class="entry-section comment">

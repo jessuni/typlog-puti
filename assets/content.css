@@ -39,26 +39,50 @@
 .entry-share a {
   margin-right: 0.5em;
 }
+.entry-share a:hover {
+  opacity: 0.8;
+}
 button.js-enjoy {
-  color: var(--quaternary-hex);
-  border: 1px solid currentColor;
-  background: transparent;
-  padding: 0.375rem 0.525rem;
+  border: 1px solid var(--meta-hex);
+  background: var(--background-hex);
+  font-weight: 700;
+  padding: 0.5em 1em;
+  letter-spacing: 0.5px;
+  font-family: monospace;
+  text-transform: uppercase;
+  color: #555;
   cursor: pointer;
   font-size: 0.875rem;
+  transition: background 0.2s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
-button.js-enjoy:hover,
-button.js-enjoy:active,
-button.js-enjoy:disabled {
+button.js-enjoy:not(:disabled):hover,
+button.js-enjoy:not(:disabled):active {
   color: var(--primary-color-hex);
   border: 1px solid currentColor;
 }
 button.js-enjoy:disabled {
   cursor: not-allowed;
+  background: var(--meta-hex);
 }
 button.js-enjoy i {
   font-style: normal;
-  margin-left: 6px;
+}
+button.enjoy:disabled i::before {
+  display: inline-block;
+  content: 'ed';
+  margin-right: 6px;
+}
+.entry-license {
+  background: var(--background-hex);
+  font-size: 0.8em;
+  padding: 1em;
+  text-align: center;
+}
+.license_name {
+  font-weight: bold;
+}
+.license_description {
+  text-align: left;
 }
 .e-content {
   letter-spacing: 0.5px;
@@ -225,6 +249,11 @@ button.js-enjoy i {
 .code-head pre {
   margin: 0;
   padding: 0 0.5em;
+}
+.block-code {
+  margin: 1em 0;
+  background: var(--background-hex);
+  padding: 0.2em 0.4em;
 }
 .block-code .highlight pre {
   background: var(--background-hex);
