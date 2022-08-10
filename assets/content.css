@@ -244,20 +244,22 @@ button.enjoy:disabled i::before {
   color: #222;
 }
 .code-head {
-  background-color: var(--background-hex);
+  background-color: #00000005;
+  border-radius: 6px;
 }
 .code-head pre {
   margin: 0;
-  padding: 0 0.5em;
 }
 .block-code {
   margin: 1em 0;
   background: var(--background-hex);
-  padding: 0.2em 0.4em;
+  border-radius: 6px;
 }
-.block-code .highlight pre {
-  background: var(--background-hex);
-  padding: 1em;
+.block-code pre {
+  padding: 7px 7px 7px 10px;
+}
+.highlight-table pre {
+  padding: 0;
 }
 .block-embed .iframe_wrapper {
   width: 100%;
