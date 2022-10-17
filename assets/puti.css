@@ -42,21 +42,27 @@ a, a:visited {
   padding: 100px 0px 40px 0px;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
 }
 .site_logo {
-  width: 100px;
+  margin-right: 10px;
+  min-width: 100px;
 }
 .site_logo h1 {
   margin: 0;
+}
+.site_logo img {
+  width: 100px;
 }
 .site_description {
   margin: 0;
   line-height: 1.9em;
   font-size: 0.875em;
+  text-align: right;
   color: var(--secondary-hex);
   font-family: 'PingHei', 'PingFang SC', Helvetica Neue, 'Work Sans', 'Hiragino Sans GB',
   'Microsoft YaHei', var(--sys-sans), sans-serif;
+
 }
 .site_social {
   color: var(--tertiary-hex);
