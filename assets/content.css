@@ -76,13 +76,11 @@ button.enjoy:disabled i::before {
   background: var(--background-hex);
   font-size: 0.8em;
   padding: 1em;
+  width: 100%;
   text-align: center;
 }
 .license_name {
   font-weight: bold;
-}
-.license_description {
-  text-align: left;
 }
 .e-content {
   letter-spacing: 0.5px;
